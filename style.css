@@ -1,0 +1,206 @@
+/*On met tout le texte de la page en arial, puis on met une image de fond, on l'empeche de se répeter 
+et on lui fait prendre la place de toute la page*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(narutobackground.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/*Tout ce qui suit est pour la barre de navigation*/
+
+/*On fait un liste pour le bandeau de navigation, on supprime les points qui se forment pour faire une liste de base,
+On colle le bandeau en haut de la page, on le fait prendre toute la largeur de la page, on le fixe pour que quand on descend la page il suive.
+Avec hidden le contenu est bloqué dans la barre et ne peut pas dépasser. Et on y met une fond de couleur.*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position:fixed ;
+    top: 0;
+    width: 100%;
+}
+/*On met tout le texte a gauche*/
+li {
+    float: left;
+}
+/*On ajoute une police présente dans le fichier*/
+@font-face {
+        font-family: njnaruto;
+        src: url(njnaruto.ttf);
+}
+/*Ici on change la police, on change sa taille, sa couleur et on y ajoute une ombre sur tout les cotés et a l'intérieur
+ On met de l'espace entre chaque partie*/
+li a {
+    font-family: njnaruto;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    color: orange;
+}
+
+/* On change la couleur quand on survole */
+li a:hover:not(.active) {
+    background-color: #111;
+}
+/*La couleur se change pour montrer sur quelle page on est*/
+.active{
+    background-color: orange;
+}
+/*Fin de la barre de navigation*/
+
+/*On ajoute une ombre aux titres, on met un espace au dessus du texte pour qu'il soit plus bas que la barre de navigation*/
+h1{
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    margin-top: 60px;
+    text-align: center;
+    font-family: njnaruto;
+    color: orange;
+}
+/*On fait les memes choses pour des polices plus petites*/
+h2{
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    text-align: center;
+    font-family: njnaruto;
+    color: orange;
+}
+
+h3{
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    text-align: center;
+    font-family: njnaruto;
+    color: orange;
+}
+
+
+/*Cette partie est pour le texte présent dans l'acceuil, on ajoute un cadre coloré, un fond, une largeur automatique, on change la couleur du texte ainsi que sa taille*/
+div.text{
+    text-align: center;
+    color: white;
+    border: solid 5px;
+    border-color: orange;
+    width: auto;
+    background-color: black;
+    font-size: 24px;
+}
+
+/*Toute cette partie est dans la partie manga du site*/ 
+
+div.left{
+    float: left;
+}
+/*On ajoute 50px d'espace entre chaque image*/
+div.left2{
+    float: left;
+    margin-left: 50px;
+}
+
+/*On met la largeur des images pour que pile la taille de l'image soit prise et que ca ne dépasse pas*/
+.container {
+    position: relative;
+    width: 200px;
+  }
+/*Ici on met des instructions pour les images, on change la largeur et la hauteur*/
+  .image {
+    
+    display: block;
+    height: 250px;
+    width: 200px;
+  }
+/*ici on met pile la taille de l'image pour que quand on passe dessus une couleur puisse de mettre, avec un fondu de 0.5 secondes
+et que l'image puisse se remettre normalement apres le passage du curseur*/
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    width: 200px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: orange;
+  }
+/*Quand on passe sue l'image avec le curseur la couleur s'affiche et on ne voit plus l'image*/
+  .container:hover .overlay {
+    opacity: 1;
+  }
+/*On fait comme avant, sauf que cette fois c'est ppour le texte, on le met au centre de l'image, on change sa police, sa couleur, 
+on ajoute une ombre, les translate servent a pouvoir afficher le texte ou non*/
+  .text2 {
+    font-family: njnaruto;
+    color: orange;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+/*Tout le bloc suivant est similaire au dernier mais cette fois pour la partie personnages, et avec des tilles d'images différentes*/
+  .container2 {
+    position: relative;
+    width: 300px;
+  }
+  
+  .image2 {
+    display: block;
+    height: 300px;
+    width: 300px;
+  }
+  
+  .overlay2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    width: 300px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: orange;
+  }
+  
+  .container2:hover .overlay2 {
+    opacity: 1;
+  }
+/*Ici on va juste mettre un style au texte du tableau et au tableau lui meme */
+table{
+    background-color: white;
+    color: orange;
+    font-family: njnaruto;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    border-color: orange;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+}
+/*On met toutes les vidéos de la partie techniques au centre*/
+div.video{
+    text-align: center;
+}
+/*Ceci sert a mettre toutes les images du site bien alignées au centre de la page*/
+div.middle{
+    justify-content: center;
+    display: flex;
+}
+/*On fait un bloc avec le formulaire et on le met au centre de la page*/
+div.form{
+    text-align: center;
+    display: block;
+}
+
+div.clan{
+    float: left;
+    text-align: center;
+}
+
